@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Vanish Executor - Мощный экзекутор для Roblox">
     <title>Vanish Executor</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Общие стили */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #6a11cb, #2575fc);
@@ -20,6 +20,7 @@
             align-items: center;
             height: 100vh;
             flex-direction: column;
+            box-sizing: border-box;
         }
 
         .container {
@@ -33,7 +34,7 @@
         h1 {
             font-size: 60px;
             margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         p {
@@ -41,6 +42,7 @@
             margin-bottom: 30px;
             line-height: 1.6;
             font-weight: 400;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         .download-btn {
@@ -51,13 +53,15 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
             text-decoration: none;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .download-btn:hover {
             background-color: #FF6347;
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
         }
 
         .visuals {
@@ -68,7 +72,7 @@
             width: 80%;
             max-width: 700px;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .footer {
@@ -101,7 +105,7 @@
         <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" class="download-btn" target="_blank">Скачать Vanish Executor</a>
         
         <div class="visuals">
-            <img src="https://avatars.mds.yandex.net/i?id=c0cef12578f4541c09da6b90e3730cdf_sr-4216502-images-thumbs&n=13" alt="Vanish Executor Visual">
+            <img src="https://via.placeholder.com/700x400" alt="Vanish Executor Visual">
         </div>
 
         <!-- Дополнительная кнопка в футере -->
