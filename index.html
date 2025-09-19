@@ -71,7 +71,7 @@
       animation: fadeInText 1s ease-out 1.5s forwards;
     }
 
-    /* Анимация для текста */
+    /* Анимация для кнопки */
     .button {
       background-color: #1f78d1; /* Синий цвет для кнопки */
       color: white;
@@ -109,6 +109,36 @@
     /* Визуальные эффекты кнопки */
     .download-btn:hover {
       background-color: #45a049;
+    }
+
+    /* Кнопка для Discord */
+    .discord-btn {
+      background-color: #7289DA; /* Цвет Discord */
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      transform: scale(1);
+      opacity: 0;
+      animation: discordButtonAppear 0.8s ease-out 2.5s forwards;
+    }
+
+    /* Анимация для кнопки Discord */
+    @keyframes discordButtonAppear {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Эффект наводки на кнопку Discord */
+    .discord-btn:hover {
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+      transform: translateY(-5px);
     }
 
     .footer {
@@ -151,6 +181,9 @@
     <h1>Vanish Executor</h1>
     <p>Vanish Executor — это мощный инструмент для вашего компьютера, который обеспечит вам отличные возможности для работы и развлечений. Скачайте его прямо сейчас и получите доступ к невероятным функциям!</p>
     <button class="button download-btn" onclick="window.location.href='https://disk.yandex.ru/d/OSNmqMfILv7JZQ'">Скачать</button>
+    
+    <!-- Кнопка для Discord -->
+    <button class="discord-btn" onclick="window.location.href='https://discord.gg/pM8pzcjZvX'">Присоединиться в Discord</button>
 
     <div class="footer">
       <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" target="_blank">Перейти на Яндекс.Диск</a>
