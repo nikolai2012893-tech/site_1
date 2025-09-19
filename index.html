@@ -12,7 +12,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: #121212;  /* Темный фон */
+            background: #121212; /* Темный фон */
             color: white;
             text-align: center;
             display: flex;
@@ -21,15 +21,59 @@
             height: 100vh;
             flex-direction: column;
             box-sizing: border-box;
+            overflow-x: hidden;
         }
 
+        /* Приветственный экран */
+        .welcome-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(18, 18, 18, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            opacity: 0;
+            animation: fadeInWelcome 2s ease-out forwards;
+        }
+
+        .welcome-screen h1 {
+            font-size: 80px;
+            color: #FF7F50;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+            animation: welcomeTextAnimation 1s ease-out forwards;
+        }
+
+        /* Анимация приветственного экрана */
+        @keyframes fadeInWelcome {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes welcomeTextAnimation {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Стиль контейнера */
         .container {
             max-width: 900px;
             width: 100%;
             padding: 40px;
             text-align: center;
             box-sizing: border-box;
-            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 3s forwards;
         }
 
         /* Заголовок */
@@ -37,7 +81,6 @@
             font-size: 60px;
             margin-bottom: 20px;
             text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
-            opacity: 0;
             animation: slideInFromTop 1s ease-out forwards;
         }
 
@@ -49,7 +92,7 @@
             font-weight: 400;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
             opacity: 0;
-            animation: fadeIn 1s ease-out 0.5s forwards;
+            animation: fadeIn 1s ease-out 1.5s forwards;
         }
 
         /* Кнопка скачивания */
@@ -65,7 +108,7 @@
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             opacity: 0;
-            animation: fadeIn 1s ease-out 1s forwards;
+            animation: fadeIn 1s ease-out 2.5s forwards;
         }
 
         .download-btn:hover {
@@ -100,7 +143,7 @@
             gap: 20px;
             flex-wrap: wrap;
             margin-top: 50px;
-            animation: fadeIn 1s ease-out 1.5s forwards;
+            animation: fadeIn 1s ease-out 3.5s forwards;
         }
 
         .card {
@@ -130,7 +173,7 @@
 
         .footer {
             margin-top: 50px;
-            animation: fadeIn 1s ease-out 2s forwards;
+            animation: fadeIn 1s ease-out 4s forwards;
         }
 
         .footer a {
@@ -148,17 +191,31 @@
             transform: translateY(-5px);
         }
 
+        /* Элементы после прокрутки */
+        .content-section {
+            margin-top: 100vh;
+            padding-top: 50px;
+        }
+
     </style>
 </head>
 <body>
+    <!-- Приветственный экран -->
+    <div class="welcome-screen">
+        <h1>Добро пожаловать в Vanish Executor</h1>
+    </div>
+
+    <!-- Основной контент -->
     <div class="container">
         <h1>Vanish Executor для Roblox</h1>
         <p>Vanish Executor — это мощный экзекутор для Roblox, позволяющий легко запускать скрипты и улучшать игровой процесс. Скачай его, чтобы открыть новые возможности в игре!</p>
         
         <!-- Кнопка для скачивания -->
         <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" class="download-btn" target="_blank">Скачать Vanish Executor</a>
-        
-        <!-- Карточки с функциями -->
+    </div>
+
+    <!-- Секция с функциями -->
+    <div class="content-section">
         <div class="card-container">
             <div class="card">
                 <h3>Безопасность</h3>
@@ -173,12 +230,13 @@
                 <p>Поддержка множества популярных скриптов для Roblox и регулярные обновления.</p>
             </div>
         </div>
-
-        <!-- Дополнительная кнопка в футере -->
-        <div class="footer">
-            <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" target="_blank">Перейти на сайт</a>
-        </div>
     </div>
+
+    <!-- Дополнительная кнопка в футере -->
+    <div class="footer">
+        <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" target="_blank">Перейти на сайт</a>
+    </div>
+
 </body>
 </html>
 
