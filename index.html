@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vanish Executor - Экзекутор для Roblox. Используй мощные скрипты для улучшения игрового процесса.">
+    <meta name="description" content="Vanish Executor для Roblox — мощный инструмент для запуска скриптов в Roblox.">
     <title>Vanish Executor для Roblox</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -12,7 +12,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #00A8FF, #6a11cb);
+            background: #121212;  /* Темный фон */
             color: white;
             text-align: center;
             display: flex;
@@ -24,25 +24,32 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             width: 100%;
             padding: 40px;
             text-align: center;
             box-sizing: border-box;
+            animation: fadeIn 1s ease-out forwards;
         }
 
+        /* Заголовок */
         h1 {
             font-size: 60px;
             margin-bottom: 20px;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            animation: slideInFromTop 1s ease-out forwards;
         }
 
+        /* Описание */
         p {
-            font-size: 20px;
+            font-size: 22px;
             margin-bottom: 30px;
             line-height: 1.6;
             font-weight: 400;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
         }
 
         /* Кнопка скачивания */
@@ -57,6 +64,8 @@
             text-decoration: none;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
         }
 
         .download-btn:hover {
@@ -65,44 +74,44 @@
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
         }
 
-        /* Анимация для картинок */
-        .visuals img {
-            width: 80%;
-            max-width: 700px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1s ease-out forwards;
+        /* Анимация появления элементов */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
 
-        /* Анимация для изображения */
-        @keyframes fadeInUp {
-            to {
+        /* Анимация для заголовка */
+        @keyframes slideInFromTop {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* Стиль для карточек */
+        /* Карточки с функциями */
         .card-container {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
             margin-top: 50px;
+            animation: fadeIn 1s ease-out 1.5s forwards;
         }
 
         .card {
-            background-color: #fff;
-            color: #333;
+            background-color: #1c1c1c;
+            color: white;
             width: 250px;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             text-align: left;
             opacity: 0;
-            transform: translateY(50px);
             animation: cardFadeIn 0.8s ease-out forwards;
         }
 
@@ -121,6 +130,7 @@
 
         .footer {
             margin-top: 50px;
+            animation: fadeIn 1s ease-out 2s forwards;
         }
 
         .footer a {
@@ -143,32 +153,24 @@
 <body>
     <div class="container">
         <h1>Vanish Executor для Roblox</h1>
-        <p>Vanish Executor — это мощный инструмент для Roblox, который позволяет запускать скрипты и изменять игровой процесс. Разблокируйте новые возможности и получайте максимальную производительность в Roblox с помощью нашего экзекуторa!</p>
+        <p>Vanish Executor — это мощный экзекутор для Roblox, позволяющий легко запускать скрипты и улучшать игровой процесс. Скачай его, чтобы открыть новые возможности в игре!</p>
         
         <!-- Кнопка для скачивания -->
         <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" class="download-btn" target="_blank">Скачать Vanish Executor</a>
         
-        <!-- Визуал с анимацией -->
-        <div class="visuals">
-            <img src="https://via.placeholder.com/700x400?text=Vanish+Executor+для+Roblox" alt="Vanish Executor Visual">
-        </div>
-
-        <!-- Карточки с информацией -->
+        <!-- Карточки с функциями -->
         <div class="card-container">
             <div class="card">
-                <img src="https://via.placeholder.com/50" alt="Безопасность">
                 <h3>Безопасность</h3>
-                <p>Vanish Executor гарантирует безопасность ваших данных и конфиденциальность при использовании скриптов.</p>
+                <p>Vanish Executor гарантирует безопасность ваших данных, работая в полностью безопасной среде.</p>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/50" alt="Удобство">
                 <h3>Удобство</h3>
-                <p>Простой и интуитивно понятный интерфейс, который позволяет легко запускать и управлять скриптами.</p>
+                <p>Простой и интуитивно понятный интерфейс для запуска скриптов в Roblox.</p>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/50" alt="Совместимость">
                 <h3>Совместимость</h3>
-                <p>Полная совместимость с Roblox и поддержка множества популярных скриптов.</p>
+                <p>Поддержка множества популярных скриптов для Roblox и регулярные обновления.</p>
             </div>
         </div>
 
@@ -179,7 +181,6 @@
     </div>
 </body>
 </html>
-
 
 
 
