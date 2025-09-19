@@ -1,143 +1,82 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanish Executor</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Синие лучи солнца на текст</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #121212;
-            color: #eaeaea;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
-            overflow: hidden;
-            position: relative;
-        }
+    .text-container {
+      position: relative;
+      font-size: 50px;
+      font-weight: bold;
+      color: white;
+      z-index: 1;
+    }
 
-        .container {
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-        }
+    .sunbeams {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        .header {
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 1;
-        }
+    .beam {
+      position: absolute;
+      background: linear-gradient(45deg, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0));
+      width: 2px;
+      height: 100%;
+      animation: beamAnimation 2s linear infinite;
+      opacity: 0.5;
+    }
 
-        .title {
-            font-size: 48px;
-            font-weight: bold;
-            color: #00c4cc; /* Акцент на цвет */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
+    @keyframes beamAnimation {
+      0% {
+        transform: rotate(0deg) translateX(0);
+      }
+      100% {
+        transform: rotate(360deg) translateX(150px);
+      }
+    }
 
-        .description {
-            font-size: 18px;
-            color: #a1a1a1;
-            margin-top: 10px;
-        }
+    /* Увеличиваем количество лучей */
+    .beam:nth-child(odd) {
+      animation-duration: 3s;
+      opacity: 0.7;
+    }
 
-        .content {
-            margin-bottom: 30px;
-        }
-
-        .download-button {
-            background-color: #00c4cc;
-            color: #121212;
-            font-size: 18px;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            z-index: 1;
-        }
-
-        .download-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .rays {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .ray {
-            position: absolute;
-            width: 4px;
-            height: 150px;
-            background: linear-gradient(180deg, rgba(0, 196, 204, 0.6), rgba(0, 196, 204, 0));
-            animation: rotate 3s linear infinite;
-        }
-
-        .ray:nth-child(1) { transform: rotate(0deg); }
-        .ray:nth-child(2) { transform: rotate(30deg); }
-        .ray:nth-child(3) { transform: rotate(60deg); }
-        .ray:nth-child(4) { transform: rotate(90deg); }
-        .ray:nth-child(5) { transform: rotate(120deg); }
-        .ray:nth-child(6) { transform: rotate(150deg); }
-        .ray:nth-child(7) { transform: rotate(180deg); }
-        .ray:nth-child(8) { transform: rotate(210deg); }
-        .ray:nth-child(9) { transform: rotate(240deg); }
-        .ray:nth-child(10) { transform: rotate(270deg); }
-        .ray:nth-child(11) { transform: rotate(300deg); }
-        .ray:nth-child(12) { transform: rotate(330deg); }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    .beam:nth-child(even) {
+      animation-duration: 4s;
+      opacity: 0.9;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1 class="title">Vanish Executor</h1>
-            <p class="description">Идеальный инструмент для выполнения скриптов с высокой производительностью и безопасностью.</p>
-        </header>
 
-        <div class="content">
-            <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" class="download-button" target="_blank">Download</a>
-        </div>
-    </div>
+  <div class="text-container">
+    Синие лучи на текст
+  </div>
 
-    <div class="rays">
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-        <div class="ray"></div>
-    </div>
+  <div class="sunbeams">
+    <div class="beam" style="top: 0; left: 50%;"></div>
+    <div class="beam" style="top: 10%; left: 10%;"></div>
+    <div class="beam" style="top: 30%; left: 30%;"></div>
+    <div class="beam" style="top: 50%; left: 50%;"></div>
+    <div class="beam" style="top: 70%; left: 70%;"></div>
+    <div class="beam" style="top: 90%; left: 90%;"></div>
+  </div>
+
 </body>
 </html>
+
