@@ -3,80 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Синие лучи солнца на текст</title>
+  <title>Vanish Executor</title>
   <style>
-    body {
-      background-color: #1e1e1e;
+    * {
       margin: 0;
-      height: 100vh;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: #2c2c2c; /* Темно-серый фон */
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png'); /* Зернистость */
+      background-size: cover;
+      text-align: center;
+      font-family: 'Arial', sans-serif;
     }
 
-    .text-container {
-      position: relative;
+    .container {
+      width: 80%;
+      max-width: 1000px;
+      padding: 50px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+    }
+
+    h1 {
       font-size: 50px;
-      font-weight: bold;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      background-color: #1f78d1; /* Синий цвет для кнопки */
       color: white;
-      z-index: 1;
+      padding: 15px 30px;
+      font-size: 20px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
     }
 
-    .sunbeams {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
+    /* Эффект наводки на кнопку */
+    .button:hover {
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+      transform: translateY(-5px);
     }
 
-    .beam {
-      position: absolute;
-      background: linear-gradient(45deg, rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0));
-      width: 2px;
-      height: 100%;
-      animation: beamAnimation 2s linear infinite;
-      opacity: 0.5;
+    /* Кнопка для скачивания */
+    .download-btn {
+      background-color: #4CAF50;
     }
 
-    @keyframes beamAnimation {
-      0% {
-        transform: rotate(0deg) translateX(0);
-      }
-      100% {
-        transform: rotate(360deg) translateX(150px);
-      }
+    /* Визуальные эффекты кнопки */
+    .download-btn:hover {
+      background-color: #45a049;
     }
 
-    /* Увеличиваем количество лучей */
-    .beam:nth-child(odd) {
-      animation-duration: 3s;
-      opacity: 0.7;
+    .footer {
+      margin-top: 40px;
     }
 
-    .beam:nth-child(even) {
-      animation-duration: 4s;
-      opacity: 0.9;
+    .footer a {
+      text-decoration: none;
+      color: #f4f4f4;
+      font-size: 16px;
+      background: #333;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      transition: background 0.3s ease;
+    }
+
+    .footer a:hover {
+      background: #444;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Vanish Executor</h1>
+    <p>Vanish Executor — это мощный инструмент для вашего компьютера, который обеспечит вам отличные возможности для работы и развлечений. Скачайте его прямо сейчас и получите доступ к невероятным функциям!</p>
+    <button class="button download-btn" onclick="window.location.href='https://disk.yandex.ru/d/OSNmqMfILv7JZQ'">Скачать</button>
 
-  <div class="text-container">
-    Синие лучи на текст
+    <div class="footer">
+      <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" target="_blank">Перейти на Яндекс.Диск</a>
+    </div>
   </div>
-
-  <div class="sunbeams">
-    <div class="beam" style="top: 0; left: 50%;"></div>
-    <div class="beam" style="top: 10%; left: 10%;"></div>
-    <div class="beam" style="top: 30%; left: 30%;"></div>
-    <div class="beam" style="top: 50%; left: 50%;"></div>
-    <div class="beam" style="top: 70%; left: 70%;"></div>
-    <div class="beam" style="top: 90%; left: 90%;"></div>
-  </div>
-
 </body>
 </html>
+
+
 
