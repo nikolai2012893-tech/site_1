@@ -3,240 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vanish Executor для Roblox — мощный инструмент для запуска скриптов в Roblox.">
-    <title>Vanish Executor для Roblox</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Vanish Executor</title>
     <style>
-        /* Общие стили */
-        body {
-            font-family: 'Roboto', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background: #121212; /* Темный фон */
-            color: white;
-            text-align: center;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #eaeaea;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
             flex-direction: column;
-            box-sizing: border-box;
-            overflow-x: hidden;
         }
 
-        /* Приветственный экран */
-        .welcome-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(18, 18, 18, 0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-            opacity: 0;
-            animation: fadeInWelcome 2s ease-out forwards;
-        }
-
-        .welcome-screen h1 {
-            font-size: 80px;
-            color: #FF7F50;
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
-            animation: welcomeTextAnimation 1s ease-out forwards;
-        }
-
-        /* Анимация приветственного экрана */
-        @keyframes fadeInWelcome {
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes welcomeTextAnimation {
-            0% {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Стиль контейнера */
         .container {
-            max-width: 900px;
-            width: 100%;
-            padding: 40px;
             text-align: center;
-            box-sizing: border-box;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 3s forwards;
+            width: 100%;
+            max-width: 600px;
         }
 
-        /* Заголовок */
-        h1 {
-            font-size: 60px;
-            margin-bottom: 20px;
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
-            animation: slideInFromTop 1s ease-out forwards;
+        .header {
+            margin-bottom: 40px;
         }
 
-        /* Описание */
-        p {
-            font-size: 22px;
+        .title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #00c4cc; /* Акцент на цвет */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .description {
+            font-size: 18px;
+            color: #a1a1a1;
+            margin-top: 10px;
+        }
+
+        .content {
             margin-bottom: 30px;
-            line-height: 1.6;
-            font-weight: 400;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            animation: fadeIn 1s ease-out 1.5s forwards;
         }
 
-        /* Кнопка скачивания */
-        .download-btn {
-            padding: 20px 50px;
-            background-color: #FF7F50;
-            color: white;
-            font-size: 22px;
+        .download-button {
+            background-color: #00c4cc;
+            color: #121212;
+            font-size: 18px;
+            padding: 15px 30px;
             border: none;
-            border-radius: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 2.5s forwards;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .download-btn:hover {
-            background-color: #FF6347;
-            transform: translateY(-8px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Анимация появления элементов */
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Анимация для заголовка */
-        @keyframes slideInFromTop {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Карточки с функциями */
-        .card-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 50px;
-            animation: fadeIn 1s ease-out 3.5s forwards;
-        }
-
-        .card {
-            background-color: #1c1c1c;
-            color: white;
-            width: 250px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            text-align: left;
-            opacity: 0;
-            animation: cardFadeIn 0.8s ease-out forwards;
-        }
-
-        .card img {
-            width: 50px;
-            margin-bottom: 15px;
-        }
-
-        /* Анимация карточек */
-        @keyframes cardFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .download-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
         }
 
         .footer {
-            margin-top: 50px;
-            animation: fadeIn 1s ease-out 4s forwards;
+            margin-top: 40px;
         }
 
-        .footer a {
-            padding: 12px 30px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 20px;
+        .footer-link {
+            font-size: 16px;
+            color: #a1a1a1;
             text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s;
         }
 
-        .footer a:hover {
-            background-color: #45a049;
-            transform: translateY(-5px);
+        .footer-link:hover {
+            color: #00c4cc;
         }
-
-        /* Элементы после прокрутки */
-        .content-section {
-            margin-top: 100vh;
-            padding-top: 50px;
-        }
-
     </style>
 </head>
 <body>
-    <!-- Приветственный экран -->
-    <div class="welcome-screen">
-        <h1>Добро пожаловать в Vanish Executor</h1>
-    </div>
-
-    <!-- Основной контент -->
     <div class="container">
-        <h1>Vanish Executor для Roblox</h1>
-        <p>Vanish Executor — это мощный экзекутор для Roblox, позволяющий легко запускать скрипты и улучшать игровой процесс. Скачай его, чтобы открыть новые возможности в игре!</p>
-        
-        <!-- Кнопка для скачивания -->
-        <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" class="download-btn" target="_blank">Скачать Vanish Executor</a>
-    </div>
+        <header class="header">
+            <h1 class="title">Vanish Executor</h1>
+            <p class="description">Идеальный инструмент для выполнения скриптов с высокой производительностью и безопасностью.</p>
+        </header>
 
-    <!-- Секция с функциями -->
-    <div class="content-section">
-        <div class="card-container">
-            <div class="card">
-                <h3>Безопасность</h3>
-                <p>Vanish Executor гарантирует безопасность ваших данных, работая в полностью безопасной среде.</p>
-            </div>
-            <div class="card">
-                <h3>Удобство</h3>
-                <p>Простой и интуитивно понятный интерфейс для запуска скриптов в Roblox.</p>
-            </div>
-            <div class="card">
-                <h3>Совместимость</h3>
-                <p>Поддержка множества популярных скриптов для Roblox и регулярные обновления.</p>
-            </div>
+        <div class="content">
+            <button class="download-button">Download</button>
         </div>
-    </div>
 
-    <!-- Дополнительная кнопка в футере -->
-    <div class="footer">
-        <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" target="_blank">Перейти на сайт</a>
+        <footer class="footer">
+            <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" class="footer-link">Перейти на Yandex Disk</a>
+        </footer>
     </div>
-
 </body>
 </html>
+
 
