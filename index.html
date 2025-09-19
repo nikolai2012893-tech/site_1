@@ -3,96 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vanish Executor — мощный инструмент для выполнения скриптов.">
+    <meta name="author" content="Vanish Executor">
     <title>Vanish Executor</title>
-    <style>
-        /* Общие стили */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Фон с зернистостью */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #2e2e2e;
-            background-image: url('https://www.transparenttextures.com/patterns/black-tie.png'); /* текстура зернистости */
-            color: #fff;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Контейнер */
-        .container {
-            text-align: center;
-            background-color: rgba(40, 40, 40, 0.9);
-            padding: 50px 70px;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        /* Заголовок */
-        h1 {
-            font-size: 2.8rem;
-            font-weight: bold;
-            margin-bottom: 30px;
-            color: #00e676;
-            text-shadow: 0px 4px 8px rgba(0, 230, 118, 0.6);
-        }
-
-        /* Кнопка */
-        .download-button {
-            display: inline-block;
-            padding: 18px 35px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #2e2e2e;
-            background-color: #00e676;
-            border-radius: 8px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-        }
-
-        .download-button:hover {
-            background-color: #00c853;
-            transform: translateY(-6px);
-            box-shadow: 0 8px 25px rgba(0, 200, 83, 0.7);
-        }
-
-        .download-button:active {
-            transform: translateY(2px);
-            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4);
-        }
-
-        /* Анимация для загрузки */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Главный блок -->
+    <header>
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Vanish Executor</h1>
+                <p>Мощный инструмент для выполнения скриптов, который останется незаметным.</p>
+                <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" class="btn-download" target="_blank">Скачать</a>
+            </div>
+        </div>
+    </header>
 
-    <div class="container">
-        <h1>Vanish Executor</h1>
-        <a href="https://s839sas.storage.yandex.net/rdisk/38c6fd702011e48ab82418fe99f230a6c90b40289299b57a2c325d94a931dcbc/68cd3216/7mkC73RYgrAC128Q2Nr4KPZT1God_zoloBmD5WIghzCkfOmeFq6WnDD9JDO6QW15lRpTZ3JY0BA2iMmYAx3Ubg==?uid=0&filename=Vanish%202.0.7z&disposition=attachment&hash=x1Fq5N7%2B5ijGLTBUWUyQClnj/mHimpf4sNzPQFNQzUG7DU0pNNXgp/gE8Z46aSJNq/J6bpmRyOJonT3VoXnDag%3D%3D&limit=0&content_type=application%2Fx-7z-compressed&owner_uid=1892005604&fsize=214282252&hid=9e2603a5d996f2fb2d5bfc8e363dcdc9&media_type=compressed&tknv=v3&ts=63f2509803180&s=57c28672e580610e90e503710bbd1b4edfbb2453896694046d9d9931762fe1aa&pb=U2FsdGVkX18kkx6cpQLKtegb7XEE7oofA99WAN7JuNusYFmPyZYp5l_l_dr096GQSZNn9WBuBN5Qs80q-rUjTAK0F8QhkZzsTcA8J5MYfTc" class="download-button" download>
-            Скачать
-        </a>
-    </div>
+    <!-- Описание -->
+    <section class="features">
+        <div class="container">
+            <h2>Особенности</h2>
+            <div class="feature-item">
+                <img src="feature1.png" alt="Feature 1">
+                <p>Быстрая и стабильная работа.</p>
+            </div>
+            <div class="feature-item">
+                <img src="feature2.png" alt="Feature 2">
+                <p>Простота использования, интуитивно понятный интерфейс.</p>
+            </div>
+            <div class="feature-item">
+                <img src="feature3.png" alt="Feature 3">
+                <p>Поддержка множества скриптов и совместимость с основными играми.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Кнопка скачивания -->
+    <section id="download" class="download-section">
+        <div class="container">
+            <h2>Скачай Vanish Executor прямо сейчас</h2>
+            <a href="https://disk.yandex.ru/d/OSNmqMfILv7JZQ" class="btn-download" target="_blank">Скачать</a>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <p>&copy; 2025 Vanish Executor. Все права защищены.</p>
+    </footer>
 </body>
 </html>
